@@ -38,7 +38,7 @@ const Home = () => {
                     <span className="main-button-icon">
                       <FaArrowRight />
                     </span>
-                    <h6 className="main-button-title">goto blog</h6>
+                    <h6 className="main-button-title">goto articles</h6>
                   </button>
                 </Link>
               </div>

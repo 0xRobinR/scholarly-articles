@@ -4,7 +4,7 @@ const Document = () => {
     <Html lang="zxx" dir="ltr">
       <Head>
         <meta name="description" content="Robin Rajput - Coding The Endgame" />
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
         <link
