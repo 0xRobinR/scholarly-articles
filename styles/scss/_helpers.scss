@@ -1,0 +1,50 @@
+@use "./mixins" as *;
+.section-title {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  position: relative;
+  &::before {
+    content: "";
+    @include position(absolute, -80px, $left: 50%);
+    transform: translateX(-50%);
+    width: 30px;
+    height: 70px;
+    border: 5px solid var(--main);
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+  }
+}
+
+.main-button {
+  @include flex(inline-flex, $dir: row);
+  background-color: var(--main);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: background-color 250ms ease-in-out;
+  &:hover {
+    background-color: transparent;
+    .main-button-icon {
+      background-color: var(--main);
+      color: var(--fixed);
+    }
+    .main-button-title {
+      color: var(--main);
+    }
+  }
+  .main-button-icon {
+    background-color: var(--fixed);
+    color: var(--main);
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+    border-radius: 0.5rem;
+    @include flex;
+    transition: all 250ms ease-in-out;
+  }
+  .main-button-title {
+    color: var(--fixed);
+    margin-left: 0.5rem;
+    margin-bottom: 0;
+    transition: color 250ms ease-in-out;
+  }
+}

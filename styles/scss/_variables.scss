@@ -1,0 +1,17 @@
+:root {
+  --main: #007bff;
+  --fixed: #f4f4f4;
+  --fixed-black: #121a20;
+  --background: #f6f6f6;
+  --background-alt: #fff;
+  --text: #0d1317;
+  --hint: #424141;
+  --shadow: #ddd;
+  &.dark {
+    --background: #0d1317;
+    --background-alt: #121a20;
+    --text: #eee;
+    --hint: #b3b3b3;
+    --shadow: #0d1317;
+  }
+}

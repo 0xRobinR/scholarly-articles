@@ -1,0 +1,66 @@
+@use "../scss/mixins" as *;
+.home {
+  @include flex;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  padding: 0;
+  @media (max-width: 991px) {
+    padding: 3rem 0;
+    &::before {
+      width: 0 !important;
+      height: 0 !important;
+    }
+  }
+  &::before {
+    content: "";
+    @include position(absolute, 0, -20%);
+    width: 50%;
+    height: 100%;
+    background-color: var(--main);
+    transform: skew(-20deg);
+    z-index: -1;
+  }
+  .left {
+    width: max-content;
+    text-align: center;
+    @media (max-width: 991px) {
+      width: auto;
+      h1 {
+        font-size: 2.5rem;
+      }
+    }
+  }
+  .imageContainer {
+    padding: 2rem;
+    @media (max-width: 991px) {
+      padding: 0;
+      margin: 1rem auto;
+      padding: 0;
+    }
+    img {
+      border-radius: 2rem;
+    }
+  }
+  .social {
+    @include position(absolute, $bottom: 0, $left: 0);
+    width: 100%;
+    padding: 1rem;
+    @media (max-width: 991px) {
+      text-align: center;
+      position: static;
+      padding: 0 1rem;
+    }
+    a {
+      @include circle(38px, 38px, transparent);
+      @include flex(inline-flex);
+      font-size: 18px;
+      color: var(--text);
+      transition: all 250ms ease-in-out;
+      &:hover {
+        background-color: var(--main);
+        color: var(--fixed);
+      }
+    }
+  }
+}

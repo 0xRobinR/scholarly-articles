@@ -1,0 +1,36 @@
+@use "../scss/mixins" as *;
+.colors {
+  @include position(fixed, 400px, $left: 108px);
+  transform: scale(0, 1);
+  background-color: var(--background-alt);
+  padding: 0 1rem;
+  border-radius: 1rem;
+  filter: drop-shadow(0 0 10px var(--shadow));
+  transition: transform 250ms ease-in;
+  z-index: 9;
+  @media (max-height: 615px) {
+    top: auto;
+    bottom: 0;
+    transform: scale(0, 1);
+    &.active {
+      transform: scale(1, 1);
+    }
+  }
+  &.active {
+    transform: scale(1, 1);
+  }
+  &::before {
+    content: "";
+    @include position(absolute, 50%, $left: -18px);
+    transform: translateY(-50%);
+    border-top: 18px solid transparent;
+    border-bottom: 18px solid transparent;
+    border-right: 18px solid var(--background-alt);
+  }
+  span {
+    display: block;
+    margin: 1rem 0;
+    @include circle(22px, 22px, transparent);
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,18 @@
+@use "../scss/mixins" as *;
+.theme {
+  @include flex;
+  width: 90px;
+  margin: 1rem 0;
+  .icon {
+    @include circle(48px, 48px, transparent);
+    @include flex;
+    font-size: 22px;
+    cursor: pointer;
+    color: var(--text);
+    transition: all 250ms ease-in-out;
+    &:hover {
+      background-color: var(--main);
+      color: var(--fixed);
+    }
+  }
+}

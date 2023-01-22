@@ -1,0 +1,70 @@
+@use "../scss/mixins" as *;
+.navbar {
+  @include position(fixed, 0, $bottom: 0, $left: 0);
+  z-index: 99;
+  background-color: var(--background-alt);
+  width: 90px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: transform 250ms ease-in;
+  @media (max-width: 991px) {
+    transform: translateX(-90px);
+  }
+  &.visible {
+    transform: translateX(0);
+  }
+  .siteTitle {
+    @include flex;
+    @include circle(48px, 48px, transparent);
+    margin: 1rem auto;
+    font-size: 22px;
+  }
+  .link {
+    @include flex;
+    margin: 1rem 0;
+    position: relative;
+    &:hover {
+      .title {
+        transform: translateY(-50%) scale(1, 1);
+      }
+      @media (max-width: 991px) {
+        .title {
+          transform: translateY(-50%) scale(1, 0);
+        }
+      }
+    }
+    .icon {
+      @include flex;
+      @include circle(48px, 48px, transparent);
+      color: var(--text);
+      font-size: 22px;
+      transition: all 250ms ease-in-out;
+      &:hover,
+      &.active {
+        background-color: var(--main);
+        color: var(--fixed);
+      }
+    }
+    .title {
+      width: max-content;
+      @include position(fixed, 50%, $left: 108px);
+      transform: translateY(-50%) scale(1, 0);
+      background-color: var(--text);
+      color: var(--background);
+      padding: 0.5rem 1rem;
+      transition: transform 250ms ease-in;
+      z-index: 2;
+      &:hover {
+        transform: translateY(-50%) scale(1, 0);
+      }
+      &::before {
+        content: "";
+        @include position(absolute, 50%, $left: -18px);
+        transform: translateY(-50%);
+        border-top: 18px solid transparent;
+        border-bottom: 18px solid transparent;
+        border-right: 18px solid var(--text);
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+@use "../scss/mixins" as *;
+.testimonial {
+  margin-top: 3rem;
+  padding-top: 3rem;
+  background-color: var(--background-alt);
+  .box {
+    @include flex;
+    margin: 0 0.5rem 3rem 0.5rem;
+    padding: 0 1rem 1rem 1rem;
+    background-color: var(--background);
+    border-radius: 1rem;
+    position: relative;
+    z-index: 1;
+    .imageContainer {
+      @include circle(100px, 100px, var(--background-alt));
+      padding: 10px;
+      margin-top: -5px;
+      img {
+        clip-path: circle(50%);
+      }
+    }
+    .quoteRight,
+    .quoteLeft {
+      @include position(absolute, $bottom: 0, $right: 1rem);
+      color: var(--main);
+      font-size: 72px;
+      z-index: -1;
+      opacity: 0.1;
+    }
+    .quoteLeft {
+      inset: 0 auto auto 1rem;
+    }
+  }
+  .slider {
+    cursor: grab;
+    .dots {
+      text-align: center;
+      margin-bottom: 0;
+      padding-left: 0;
+      li {
+        display: inline-block;
+        margin: 0 auto 3rem auto;
+        button {
+          font-size: 0;
+          @include circle(18px, 18px, var(--background));
+          margin: 0 0.5rem;
+          transition: background-color 250ms ease-in-out;
+        }
+      }
+      :global(li.slick-active) button {
+        background-color: var(--main);
+      }
+    }
+  }
+}

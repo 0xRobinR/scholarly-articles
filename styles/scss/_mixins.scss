@@ -1,0 +1,27 @@
+@mixin flex($inline: flex, $dir: column, $align: center, $justify: center) {
+  display: $inline;
+  flex-direction: $dir;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin circle($width, $height, $backgroundColor) {
+  width: $width;
+  height: $height;
+  background-color: $backgroundColor;
+  border-radius: 50%;
+}
+
+@mixin position(
+  $position,
+  $top: null,
+  $right: null,
+  $bottom: null,
+  $left: null
+) {
+  position: $position;
+  top: $top;
+  left: $left;
+  right: $right;
+  bottom: $bottom;
+}

@@ -1,0 +1,28 @@
+@use "../scss/mixins" as *;
+.settings {
+  @include flex;
+  width: 90px;
+  margin: 1rem 0;
+  position: relative;
+  z-index: 9;
+  .icon {
+    @include flex;
+    @include circle(48px, 48px, transparent);
+    font-size: 22px;
+    color: var(--text);
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+    &:hover {
+      background-color: var(--main);
+      color: var(--fixed);
+    }
+    .iconContent {
+      animation: rotation 2s linear infinite;
+      @keyframes rotation {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    }
+  }
+}

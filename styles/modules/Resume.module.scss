@@ -1,0 +1,46 @@
+@use "../scss/mixins" as *;
+.resume {
+  margin-top: 3rem;
+  position: relative;
+  &::before {
+    content: "";
+    @include position(absolute, 12rem, 0);
+    width: 200px;
+    height: 200px;
+    background-color: var(--main);
+    border-radius: 50% 0 0 50%;
+    opacity: 0.03;
+    @media (max-width: 991px) {
+      display: none;
+    }
+  }
+  .title {
+    margin: 0;
+    @include flex($dir: row, $align: center, $justify: flex-start);
+    .titleIcon {
+      color: var(--main);
+      margin-right: 0.5rem;
+      font-size: 2.75rem;
+    }
+  }
+  .box {
+    border-left: 1px solid var(--background-alt);
+    padding: 1rem;
+    .name {
+      position: relative;
+      &::before {
+        content: "";
+        @include position(absolute, 10px, $left: calc(-1rem - 5px));
+        @include circle(9px, 9px, var(--main));
+      }
+    }
+    .date {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      background-color: var(--main);
+      color: var(--fixed);
+      font-weight: 500;
+    }
+  }
+}

@@ -1,0 +1,56 @@
+@use "../scss/mixins" as *;
+.services {
+  .box {
+    background-color: var(--background-alt);
+    filter: drop-shadow(0 5px 17px var(--shadow));
+    padding: 1.5rem 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+    &::before,
+    &::after {
+      content: "";
+      @include position(absolute, 0, $left: 0);
+      width: 0;
+      height: 100%;
+      background-color: var(--main);
+      border-radius: 1rem 0 0 1rem;
+      z-index: -1;
+      transition: width 300ms ease-in-out;
+    }
+    &::after {
+      left: auto;
+      right: 0;
+      border-radius: 0 1rem 1rem 0;
+      opacity: 0.9;
+    }
+    &:hover {
+      color: var(--fixed) !important;
+      &::before,
+      &::after {
+        width: 50%;
+      }
+      p {
+        color: var(--fixed);
+      }
+      .icon {
+        background-color: var(--fixed);
+        color: var(--main);
+      }
+    }
+    .icon {
+      @include flex($inline: inline-flex);
+      @include circle(100px, 100px, var(--main));
+      font-size: 53px;
+      margin-bottom: 1.5rem;
+      color: var(--fixed);
+      transition: all 300ms ease-in-out;
+    }
+    h3,
+    p {
+      transition: color 250ms ease-in-out;
+    }
+  }
+}

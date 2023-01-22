@@ -1,0 +1,25 @@
+@use "../scss/mixins" as *;
+.skills {
+  margin-top: 3rem;
+  background-color: var(--background-alt);
+  padding-top: 3rem;
+  .circle {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+    width: 200px;
+    height: 200px;
+    background: conic-gradient(var(--main) 50%, var(--background) 0%);
+    clip-path: circle(50%);
+    position: relative;
+    z-index: 1;
+    @include flex;
+    &::before {
+      content: "";
+      @include position(absolute, 50%, $left: 50%);
+      transform: translate(-50%, -50%);
+      @include circle(87%, 87%, var(--background-alt));
+      z-index: -1;
+    }
+  }
+}

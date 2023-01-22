@@ -1,0 +1,33 @@
+{
+  "name": "@robinrajput/build",
+  "author": {
+    "name": "robin rajput",
+    "email": "robin.rajput@360coreinc.com"
+  },
+  "description": "robinrajput's website",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^3.7.0",
+    "bootstrap": "^5.2.1",
+    "email-validator": "^2.0.4",
+    "next": "12.3.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "^4.4.0",
+    "react-slick": "^0.29.0",
+    "sass": "^1.54.9",
+    "slick-carousel": "^1.8.1",
+    "typewriter-effect": "^2.19.0"
+  },
+  "devDependencies": {
+    "eslint": "8.23.1",
+    "eslint-config-next": "12.3.0"
+  }
+}

@@ -1,0 +1,7 @@
+.main {
+  position: relative;
+  margin-left: 90px;
+  @media (max-width: 991px) {
+    margin-left: auto;
+  }
+}

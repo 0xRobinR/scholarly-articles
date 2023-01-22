@@ -1,0 +1,32 @@
+:focus {
+  outline: 0 !important;
+}
+
+body {
+  overflow-x: hidden !important;
+  background-color: var(--background);
+  color: var(--text);
+  input,
+  textarea,
+  button {
+    border: 0;
+    background-color: transparent;
+  }
+  a {
+    text-decoration: none !important;
+    color: inherit;
+    &:hover {
+      text-decoration: none !important;
+      color: inherit;
+    }
+  }
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  section {
+    min-height: 100vh;
+    padding-top: 3rem;
+  }
+}

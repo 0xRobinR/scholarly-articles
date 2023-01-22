@@ -1,0 +1,92 @@
+@use "../scss/mixins" as *;
+.portfolio {
+  .buttons {
+    margin-top: 3rem;
+    text-align: center;
+    button {
+      display: inline-block;
+      background-color: var(--main);
+      color: var(--fixed);
+      margin: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 1rem;
+      font-weight: 500;
+      text-transform: capitalize;
+      transition: all 250ms ease-in-out;
+      &.active,
+      &:hover {
+        background-color: transparent;
+        color: var(--main);
+      }
+    }
+  }
+  .gallery {
+    margin-top: 3rem;
+    columns: 4 auto;
+    column-gap: 0;
+    @media (max-width: 1199px) {
+      columns: 3 auto;
+    }
+    @media (max-width: 991px) {
+      columns: 2 auto;
+    }
+    @media (max-width: 767px) {
+      columns: 1 auto;
+    }
+    .image {
+      padding: 0.5rem;
+      position: relative;
+      filter: drop-shadow(0 0 10px var(--shadow));
+      animation: showing 0.3s linear 0s 1;
+      @keyframes showing {
+        0% {
+          transform: scale(0);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      &:hover {
+        .overlay {
+          opacity: 1;
+        }
+      }
+      img {
+        border-radius: 1rem;
+      }
+      .overlay {
+        @include position(absolute, 0.5rem, $left: 0.5rem);
+        background: linear-gradient(
+          var(--fixed-black),
+          transparent,
+          var(--fixed-black)
+        );
+        width: calc(100% - 1rem);
+        height: calc(100% - 1rem);
+        opacity: 0;
+        transition: opacity 300ms linear;
+        padding: 1rem;
+        border-radius: 1rem;
+        color: var(--fixed);
+        .bottom {
+          width: calc(100% - 1rem);
+          padding: 0 1rem;
+          @include position(absolute, $bottom: 0.5rem, $left: 0.5rem);
+          @include flex($dir: row, $justify: space-between);
+          .category {
+            margin-bottom: 0;
+            display: inline-block;
+            background-color: var(--background);
+            padding: 5px 16px;
+            border-radius: 1rem;
+            color: var(--text);
+          }
+          .icon {
+            font-size: 22px;
+            color: var(--fixed);
+          }
+        }
+      }
+    }
+  }
+}
