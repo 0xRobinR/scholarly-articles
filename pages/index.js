@@ -53,13 +53,13 @@ const Home = () => {
       </div>
       {/* social media icons */}
       <div className={styles.social}>
-        <a href={githubProfile} className="ms-1">
+        <a target={"_blank"} href={githubProfile} className="ms-1">
           <FaGithub />
         </a>
-        <a href={twitterProfile} className="ms-1">
+        <a target={"_blank"} href={twitterProfile} className="ms-1">
           <FaTwitter />
         </a>
-        <a href={linkedInProfile} className="ms-1">
+        <a target={"_blank"} href={linkedInProfile} className="ms-1">
           <FaLinkedinIn />
         </a>
       </div>
