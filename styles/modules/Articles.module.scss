@@ -1,5 +1,5 @@
 @use "../scss/mixins" as *;
-.blog {
+.article {
   .box {
     background-color: var(--background-alt);
     filter: drop-shadow(0 5px 17px var(--shadow));
@@ -31,5 +31,8 @@
       text-transform: lowercase;
       font-weight: 500;
     }
+  }
+  a {
+    color: #bad7ba !important;
   }
 }

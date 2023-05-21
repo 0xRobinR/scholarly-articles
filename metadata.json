@@ -1,0 +1,18 @@
+{
+  "articles": [
+    {
+      "file": "rollback-tokens.md",
+      "title": "rollback tokens",
+      "author": "robin",
+      "date": "2023-05-21T00:00:00.000Z",
+      "tags": "erc, rollback, tokens",
+      "index": 1,
+      "label": "how?",
+      "image": "rbt_token.png",
+      "description": "a new standard for erc20 tokens, which allows address/contracts to rollback erc20 transactions",
+      "oneLiner": "an erc standard",
+      "buttonLabel": "how?"
+    }
+  ],
+  "lastUpdated": "2023-05-21T13:40:11.969Z"
+}

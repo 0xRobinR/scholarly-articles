@@ -3,8 +3,7 @@ import styles from "../styles/modules/Navbar.module.scss";
 import {
   FaHome,
   FaUserTie,
-  FaBlog,
-  FaCode,
+  FaCode, FaGit,
 } from "react-icons/fa";
 import { useRouter } from "next/router";
 
@@ -18,7 +17,7 @@ const Navbar = () => {
   const navLinks = [
     { href: "/", icon: <FaHome />, title: "home" },
     { href: "/about", icon: <FaUserTie />, title: "overview" },
-    { href: "/scholarly-articles", icon: <FaBlog />, title: "scholarly articles" },
+    { href: "/scholarly-articles", icon: <FaGit />, title: "scholarly scholarly-articles", other: "scholarly-articles" },
   ];
 
   return (
@@ -42,7 +41,7 @@ const Navbar = () => {
               className={
                 styles.icon +
                 " " +
-                (router.asPath === navLink.href ? styles.active : "") // change active class when route change (route = href > add active class)
+                ((router.asPath === navLink.href || ( navLink.other && router.asPath.includes(navLink.other) )) ? styles.active : "") // change active class when route change (route = href > add active class)
               }
               onClick={() => navbar.current.classList.remove(styles.visible)} // in (large , medium, small) screens  when click on navbar link navbar close
               // used in arrow function to fix (ref undefined)

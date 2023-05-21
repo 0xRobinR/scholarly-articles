@@ -18,7 +18,7 @@ const Preloader = () => {
       setTimeout(() => {
         body.style.overflowY = "auto";
         preloader.current.classList.remove(styles.show);
-      }, 2000);
+      }, 800);
     });
   });
 
