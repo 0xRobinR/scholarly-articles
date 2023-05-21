@@ -4,4 +4,4 @@ export const githubProfile = "https://github.com/0xRobinR"
 
 export const raiseIssue = "https://github.com/0xRobinR/scholarly-articles/issues/new"
 export const articleFile = "https://github.com/0xRobinR/scholarly-articles/tree/main/articles/"
-export const baseUrl = "http://localhost:3000"
+export const baseUrl = "https://robinrajput.com"
