@@ -54,7 +54,7 @@ struct TransferStruct {
     @return TransferStruct
 **/
 mapping( address => mapping( uint => TransferStruct )) public transfers;
-mapping( adress => uint ) public transferCount;
+mapping( address => uint ) public transferCount;
 
 ... balanceOf( address account ) {
     uint256 balances = 0
