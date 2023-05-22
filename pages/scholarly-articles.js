@@ -19,8 +19,9 @@ const ScholarlyArticles = () => {
                 <div className="row">
                     <div className="col-12 text-center">
                         <h2 className="section-title mb-0">
-                            scholarly articles
+                            pre-scholarly<br /> articles
                         </h2>
+                        <span>these are draft articles, just proposals, and needs to be peer-reviewed</span>
                     </div>
                 </div>
                 <div className="row mt-5 justify-content-center">
