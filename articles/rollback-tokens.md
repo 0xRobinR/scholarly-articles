@@ -7,7 +7,7 @@ index: 1
 label: how?
 image: rbt_token.png
 description: a new standard for erc20 tokens, which allows address/contracts to rollback erc20 transactions
-oneLiner: an erc20 extended standard
+oneLiner: an extended erc20 standard
 ---
 
 # what?
