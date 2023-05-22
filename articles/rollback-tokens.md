@@ -38,6 +38,8 @@ to the exploiter can be reversed back using the helper address.
 using zero-knowledge proofs, one can assign its helper in a way without exposing its details. only the sahayak will have the proof to prove its ownership
 over reversing transfers.
 
+
+
 hold on, wouldn't the exploiter transfer to another address again? no! that's the catch (and a security level check),
 for the tokens to be reflected in the balance, the same time period will be considered.
 
@@ -102,6 +104,15 @@ rbtOracle.assign( bytes memory signature, address contractAddress, address sahay
 ```
 
 once it's registered to the oracle, the `sahayak` will be able to reverse the rbt token transfers within the time period set by the oracle.
+
+for verifying the `sahayak` address, we will be using zkSNARK's PLONK verifier, which will receive the proof given at the time of assigning
+the sahayak, and verify the proof with the public inputs, and return the result.
+
+```solidity
+function verify( bytes memory proof, Commitment memory publicInputs ) public view returns ( bool ) {
+    return verifier.verify( proof, publicInputs );
+}
+```
 
 extended features
 - one address can only have one sahayak
