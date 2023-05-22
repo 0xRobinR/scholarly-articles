@@ -1,6 +1,5 @@
 import styles from "../../styles/modules/Articles.module.scss"
 import {useRouter} from "next/router";
-import MarkdownContent from "./content";
 
 import fs from 'fs';
 import path from 'path';
@@ -10,6 +9,7 @@ import html from 'remark-html';
 import MetaData from "../../metadata.json"
 import Head from "next/head";
 import {baseUrl} from "../../config";
+import MarkdownContent from "../../components/Content";
 
 export async function getStaticPaths({articleTitle}) {
     const titles = MetaData.articles.map((article) => article.file.replace(".md", ""))
@@ -33,8 +33,6 @@ export async function getStaticProps({params}) {
     const fileContent = fs.readFileSync(filePath, 'utf8');
     const { content, data } = matter(fileContent);
 
-    console.log(content, data)
-
     const processedContent = await remark().use(html).process(content);
     const contentHtml = processedContent.toString();
 
@@ -56,8 +54,6 @@ export async function getStaticProps({params}) {
 const Articles = ({ content, metadata }) => {
     const router = useRouter()
     const { asPath } = router;
-
-    console.debug(router)
 
     return (
         <>

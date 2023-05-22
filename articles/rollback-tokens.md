@@ -112,6 +112,10 @@ the rbt tokens will be the most secured way of storing assets, and will be the m
 for now, i'm unable to get any `ifs` (any loopholes), but if you have any, feel free to raise an issue below.
 
 ---
+# for?
+using rbt tokens, the crypto community will be in a more secured environment than ever! `the endgame for most of the hacks`
+
+---
 
 # now?
 there are many more questions that arises in using the rbt tokens, `how will be a contract checks for the tokens transferred?`,
@@ -120,11 +124,6 @@ there are many more questions that arises in using the rbt tokens, `how will be 
 some questions needs dev community to engage in building a protocol that will be the most secured way of storing assets.
 
 for this standard to be considered, we'll require a great response on this article, to be heard by the [ethereum magicians](https://ethereum-magicians.org/).
-
----
-
-# for?
-using rbt tokens, the crypto community will be in a more secured environment than ever! `the endgame for most of the hacks`
 
 ---
 

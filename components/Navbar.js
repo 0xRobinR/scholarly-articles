@@ -17,7 +17,7 @@ const Navbar = () => {
   const navLinks = [
     { href: "/", icon: <FaHome />, title: "home" },
     { href: "/about", icon: <FaUserTie />, title: "overview" },
-    { href: "/scholarly-articles", icon: <FaGit />, title: "scholarly scholarly-articles", other: "scholarly-articles" },
+    { href: "/scholarly-articles", icon: <FaGit />, title: "scholarly articles", other: "scholarly-articles" },
   ];
 
   return (

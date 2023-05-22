@@ -33,7 +33,7 @@ const Home = () => {
                 />
               </h4>
               <div className={"mt-4"}>
-                <Link href={"/scholarly-scholarly-articles"}>
+                <Link href={"/scholarly-articles"}>
                   <button type="submit" className="main-button">
                     <span className="main-button-icon">
                       <FaArrowRight />
