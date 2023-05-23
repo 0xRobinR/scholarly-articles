@@ -45,7 +45,7 @@ for the tokens to be reflected in the balance, the same time period will be cons
 
 ```solidity
 struct TransferStruct {
-    address sender;
+    address to;
     uint256 amount;
     uint256 timestamp;
     bool isValid;
