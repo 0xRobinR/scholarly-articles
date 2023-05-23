@@ -58,17 +58,21 @@ struct TransferStruct {
 mapping( address => mapping( uint => TransferStruct )) public transfers;
 mapping( address => uint ) public transferCount;
 
-... getAmount( address account, uint tid ) internal view returns ( uint256 amount ) {
-    uint lockPeriod = IOracle(oracle).getLockPeriod();
-    uint timestamp = transfers[msg.sender][tid].timestamp;
+... isValid( address account, uint tid ) internval view returns ( bool ) {
+    uint lockPeriod = IRBOracle( _oracle ).getReversePeriod();
+    uint locked = _transfers[account][tid].timestamp.add( lockPeriod );
+    
+    return block.timestamp > locked;
+}
 
-    amount = (timestamp + lockPeriod) < block.timestamp ? transfers[msg.sender][tid].amount : 0;
+... getAmount( address account, uint tid ) internal view returns ( uint256 amount ) {
+    amount = transfers[msg.sender][tid].amount;
 }
 
 ... balanceOf( address account ) {
     uint256 balances = 0
     for ( uint i = 0; i < transferCount[account] i ++ ) {
-        balances = transfers[account][i].isValid ? getAmount(account, i) : 0; 
+        balances = isValid( account, i ) ? getAmount(account, i) : 0; 
     }
 }
 ```
