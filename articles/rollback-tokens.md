@@ -48,7 +48,6 @@ struct TransferStruct {
     address to;
     uint256 amount;
     uint256 timestamp;
-    bool isValid;
 }
 
 /**
