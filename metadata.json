@@ -1,6 +1,19 @@
 {
   "articles": [
     {
+      "file": "eip-6932.md",
+      "title": "auto-debit subscription based erc20 token",
+      "author": "robin",
+      "date": "2023-06-01T00:00:00.000Z",
+      "tags": "erc, eip 6932, auto debit, subscription, tokens",
+      "index": 2,
+      "label": "learn more",
+      "image": "eip_6932.png",
+      "description": "an extended erc20 standard, with auto debit feature for subscription based payments",
+      "oneLiner": "eip 6932",
+      "buttonLabel": "learn more"
+    },
+    {
       "file": "rollback-tokens.md",
       "title": "rollback tokens",
       "author": "robin",
@@ -10,9 +23,9 @@
       "label": "how?",
       "image": "rbt_token.png",
       "description": "a new standard for erc20 tokens, which allows address/contracts to rollback erc20 transactions",
-      "oneLiner": "an erc standard",
+      "oneLiner": "an extended erc20 standard",
       "buttonLabel": "how?"
     }
   ],
-  "lastUpdated": "2023-05-22T03:58:00.023Z"
+  "lastUpdated": "2023-06-01T18:52:32.397Z"
 }
