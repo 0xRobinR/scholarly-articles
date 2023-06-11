@@ -25,15 +25,28 @@ export async function getStaticPaths({articleTitle}) {
     };
 }
 
+const Image = ({alt, src}) => {
+    return (
+        <div style={{display: 'flex', justifyContent: 'center', textAlign:"center"}}>
+            <div>
+                <img src={src} alt={alt} width={480}/>
+                <span>{alt}</span>
+            </div>
+        </div>
+    )
+}
+
 export async function getStaticProps({params}) {
     const { articleTitle } = params;
     const articlesDirectory = path.join(process.cwd(), 'articles');
     const filePath = path.join(articlesDirectory, `${articleTitle}.md`);
-    console.log(filePath)
+
     const fileContent = fs.readFileSync(filePath, 'utf8');
     const { content, data } = matter(fileContent);
 
-    const processedContent = await remark().use(html).process(content);
+    const processedContent = await remark().use(html, {
+        img: Image
+    }).process(content);
     const contentHtml = processedContent.toString();
 
     const dateString = data.date.toISOString(); // Convert to ISO string or any desired format

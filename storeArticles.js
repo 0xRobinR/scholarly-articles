@@ -37,11 +37,14 @@ fs.readdir(directoryPath, (err, files) => {
         return readMarkdownFile(filepath);
     });
 
+    const sortAccordingToIndexInDescending = result.sort((a, b) => {
+        return b.index - a.index;
+    })
+
     const outputData = {
-        articles: result,
+        articles: sortAccordingToIndexInDescending,
         lastUpdated: new Date().toISOString()
     }
-
     // Convert the result to JSON
     const jsonResult = JSON.stringify(outputData, null, 2);
 

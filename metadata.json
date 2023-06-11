@@ -1,6 +1,19 @@
 {
   "articles": [
     {
+      "file": "git-blockchain.md",
+      "title": "GIT-1: Blockchain",
+      "author": "robin",
+      "date": "2023-06-11T00:00:00.000Z",
+      "tags": "research",
+      "index": 3,
+      "label": "dive in",
+      "image": "git_blockchain.png",
+      "description": "we are just on the tip of the \"blockchain\" iceberg",
+      "oneLiner": "gap-in-technology of blockchain",
+      "buttonLabel": "dive in"
+    },
+    {
       "file": "eip-6932.md",
       "title": "auto-debit subscription based erc20 token",
       "author": "robin",
@@ -27,5 +40,5 @@
       "buttonLabel": "how?"
     }
   ],
-  "lastUpdated": "2023-06-01T18:52:32.397Z"
+  "lastUpdated": "2023-06-11T17:51:05.663Z"
 }
