@@ -7,7 +7,7 @@ index: 3
 label: dive in
 image: git_blockchain.png
 description: we are just on the tip of the "blockchain" iceberg
-oneLiner: gap-in-technology of blockchain
+oneLiner: gap-in-technology for blockchain
 ---
 
 ## overview
