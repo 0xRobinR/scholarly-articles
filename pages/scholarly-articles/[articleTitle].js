@@ -76,7 +76,7 @@ const Articles = ({ content, metadata }) => {
                 <meta property={"og:description"} content={metadata.description} />
                 <meta property={"og:image"} content={`${baseUrl}/${metadata.image}`} />
                 <meta property={"og:url"} content={`${baseUrl}${asPath}`} />
-                <meta name={"twitter:card"} content={`${baseUrl}/${metadata.image}`}/>
+                <meta name={"twitter:card"} content={`summary_large_image`}/>
             </Head>
             <section className={styles.article}>
                 <div className="container">
