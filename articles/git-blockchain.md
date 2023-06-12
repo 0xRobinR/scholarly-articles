@@ -85,7 +85,7 @@ with decentralization. but, the question is **how?**
 
 #### suggestions
 
-- use of zk-rollups, to achieve scalability with decentralization
+- use of zk-rollup, to achieve scalability with decentralization
 - use of sharding, to achieve scalability with decentralization
 - use of [state channels](https://ethereum.org/en/developers/docs/scaling/state-channels/), this one is my favorite, as it is
   the most efficient way to achieve scalability with decentralization.
