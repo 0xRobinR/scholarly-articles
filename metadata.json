@@ -1,6 +1,19 @@
 {
   "articles": [
     {
+      "file": "create-upgradeable-contracts-from-smart-contracts.md",
+      "title": "upgradeable oracle contract",
+      "author": "robin",
+      "date": "2023-07-26T00:00:00.000Z",
+      "tags": "research",
+      "index": 4,
+      "label": "create",
+      "image": "upgradeable_contract.png",
+      "description": "using proxy pattern to create upgradeable contracts from smart contracts, a practical guide",
+      "oneLiner": "create upgradeable contracts from smart contracts",
+      "buttonLabel": "create"
+    },
+    {
       "file": "git-blockchain.md",
       "title": "GIT-1: Blockchain",
       "author": "robin",
@@ -10,7 +23,7 @@
       "label": "dive in",
       "image": "git_blockchain.png",
       "description": "we are just on the tip of the \"blockchain\" iceberg",
-      "oneLiner": "gap-in-technology of blockchain",
+      "oneLiner": "gap-in-technology for blockchain",
       "buttonLabel": "dive in"
     },
     {
@@ -40,5 +53,5 @@
       "buttonLabel": "how?"
     }
   ],
-  "lastUpdated": "2023-06-11T17:51:05.663Z"
+  "lastUpdated": "2023-07-26T03:45:06.770Z"
 }
