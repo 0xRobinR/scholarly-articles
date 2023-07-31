@@ -108,7 +108,7 @@ rbtOracle.assign( bytes memory signature, address contractAddress, address sahay
 
 once it's registered to the oracle, the `sahayak` will be able to reverse the rbt token transfers within the time period set by the oracle.
 
-for verifying the `sahayak` address, we will be using zkSNARK's PLONK verifier, which will receive the proof given at the time of assigning
+for verifying the `sahayak` address, we will be using zkSTARK for verifying proofsg without using a trusted base, which will receive the proof given at the time of assigning
 the sahayak, and verify the proof with the public inputs, and return the result.
 
 ```solidity
