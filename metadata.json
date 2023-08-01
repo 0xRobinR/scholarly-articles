@@ -2,7 +2,7 @@
   "articles": [
     {
       "file": "create-upgradeable-contracts-from-smart-contracts.md",
-      "title": "upgradeable oracle contract",
+      "title": "create upgradeable contract from a contract",
       "author": "robin",
       "date": "2023-07-26T00:00:00.000Z",
       "tags": "research",
@@ -53,5 +53,5 @@
       "buttonLabel": "how?"
     }
   ],
-  "lastUpdated": "2023-07-26T03:45:06.770Z"
+  "lastUpdated": "2023-08-01T18:06:20.514Z"
 }
