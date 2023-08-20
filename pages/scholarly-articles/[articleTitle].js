@@ -29,6 +29,7 @@ const Image = ({alt, src}) => {
     return (
         <div style={{display: 'flex', justifyContent: 'center', textAlign:"center"}}>
             <div>
+                <h2>HELLo</h2>
                 <img src={src} alt={alt} width={480}/>
                 <span>{alt}</span>
             </div>

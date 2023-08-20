@@ -1,16 +1,29 @@
 {
   "articles": [
     {
+      "file": "initial-coin-auction.md",
+      "title": "ica (initial coin auction)",
+      "author": "robin",
+      "date": "2023-08-21T00:00:00.000Z",
+      "tags": "research",
+      "index": 5,
+      "label": "explain",
+      "image": "ica.png",
+      "description": "initial coin auction gives end users the power of deciding the price of a token/coin",
+      "oneLiner": "why ICO, when you can ICA!",
+      "buttonLabel": "explain"
+    },
+    {
       "file": "create-upgradeable-contracts-from-smart-contracts.md",
       "title": "create upgradeable contract from a contract",
       "author": "robin",
-      "date": "2023-07-26T00:00:00.000Z",
+      "date": "2023-08-01T00:00:00.000Z",
       "tags": "research",
       "index": 4,
       "label": "create",
       "image": "upgradeable_contract.png",
       "description": "using proxy pattern to create upgradeable contracts from smart contracts, a practical guide",
-      "oneLiner": "create upgradeable contracts from smart contracts",
+      "oneLiner": "proxy contract from a contract?",
       "buttonLabel": "create"
     },
     {
@@ -53,5 +66,5 @@
       "buttonLabel": "how?"
     }
   ],
-  "lastUpdated": "2023-08-01T18:06:20.514Z"
+  "lastUpdated": "2023-08-20T20:20:56.970Z"
 }

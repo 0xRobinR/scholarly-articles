@@ -7,7 +7,7 @@ index: 4
 label: create
 image: upgradeable_contract.png
 description: using proxy pattern to create upgradeable contracts from smart contracts, a practical guide
-oneLiner: create upgradeable contracts from smart contracts
+oneLiner: proxy contract from a contract?
 ---
 
 in this article, we will learn how to create upgradeable contracts from smart contracts, using *diamond* proxy pattern. its an essential requirement for a contract that requires a deployed logic that can be upgraded in the future, without affecting the state of the contract.
