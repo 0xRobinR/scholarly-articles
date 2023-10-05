@@ -25,4 +25,7 @@ AI is now seen as *minimizing complex task*, while still training from the infor
 recent growths, however, were highly recognized as an effort towards the growth of artificial intelligence, there are stil some improvements to be done.
 
 ----
+
 using the top 2 technologies of this century (by far) we can create revolutionary and more sustainable applications for the future. [ blockchain + AI ]
+
+----
