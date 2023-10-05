@@ -27,5 +27,3 @@ recent growths, however, were highly recognized as an effort towards the growth 
 ----
 
 using the top 2 technologies of this century (by far) we can create revolutionary and more sustainable applications for the future. [ blockchain + AI ]
-
-----
