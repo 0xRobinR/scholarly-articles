@@ -1,6 +1,19 @@
 {
   "articles": [
     {
+      "file": "ai-in-the-blockchain.md",
+      "title": "the ai in the blockchAIn",
+      "author": "robin",
+      "date": "2023-10-03T00:00:00.000Z",
+      "tags": "research",
+      "index": 6,
+      "label": "see the future",
+      "image": "ai_in_the_blockchain.png",
+      "description": "AI will help validate the blocks, no sybil attacks, time-jacking... we have heard them all. let's talk about what blockchain can do for AI",
+      "oneLiner": "how AI will see the world",
+      "buttonLabel": "see the future"
+    },
+    {
       "file": "initial-coin-auction.md",
       "title": "ica (initial coin auction)",
       "author": "robin",
@@ -66,5 +79,5 @@
       "buttonLabel": "how?"
     }
   ],
-  "lastUpdated": "2023-08-20T20:20:56.970Z"
+  "lastUpdated": "2023-10-04T02:38:30.669Z"
 }
