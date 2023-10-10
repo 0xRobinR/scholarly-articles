@@ -20,6 +20,8 @@ many assumptions and works were initiated to create the "artificial brain", and 
 
 these groundworks from scientists and data engineers paved the way to the dawn of the [AI era](https://www.tableau.com/data-insights/AI/history#definition). an AI, for now, is just a machine predicting the next outcome from previously fed data, the more data, the more is the accuracy of "predicting". and for data, user-centric systems focuses on utilizing user resources in their [learning](https://www.indiatoday.in/technology/news/story/zoom-updates-its-policy-that-allowed-it-to-collect-user-data-and-train-AI-2418103-2023-08-08), which is probably not good way of collecting information without the end-user knowledge and no benefits to them.
 
+![ai nets](/ai_nets.png)
+
 AI is now seen as *minimizing complex task*, while still training from the information provided by the trainers, a centralized entitiy.
 
 recent growths, however, were highly recognized as an effort towards the growth of artificial intelligence, there are stil some improvements to be done.
@@ -41,6 +43,8 @@ mastering a specific field, with highly generative datasets will make an impact 
 blockchain requires nodes to validate transactions, miners to validate group of transactions into the block, and protocol to add the block into the blockchain. 
 
 AI could be conceptualized as having these components. in this framework, 'nodes' could be individual data points or features that the AI model evaluates, 'miners' could be the algorithms that process and make sense of these data points, and the 'protocol' could be the overarching training algorithm that adjusts the model based on the processed data, just like an training environment.
+
+![how highlight](/flow_components.png)
 
 #### nodes as `data points`
 
@@ -65,6 +69,8 @@ the training layers in a neural network are governed by algorithms like backprop
 in both blockchain and AI, this middle layer of 'miners' or 'algorithms/training layers' serves as the mechanism that transforms individual, simpler units (transactions in blockchain, data points in AI) into a more complex and structured form (blocks in blockchain, trained models in AI). they are the workhorses that do the heavy computational lifting, ensuring that the system functions as intended.
 
 the idea of integrating these two—having a decentralized network of 'miners' that contribute to the training of an AI model—could offer some intriguing possibilities.
+
+![blockchain as a training environment](/blockchain_environment.png)
 
 #### protocol as `training environment`
 
