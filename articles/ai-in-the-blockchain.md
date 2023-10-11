@@ -90,6 +90,19 @@ understanding this parallel opens up some fascinating avenues for exploration. f
 
 by understanding these parallels, we can start to imagine a future where AI models are trained and operate in a manner that is more transparent, decentralized, and secure. this could open up new avenues for community-driven AI development, ethical considerations, and even novel forms of decentralized decision-making.
 
+### training decentralized
+
+using strategies like, distributed training using a server and worker nodes, for parallely computing train inputs. implementation in synchronous or asynchronous environment, where the path will be defined by the amount of data that has to trained on. there are multiple strategy in both tensorflow and pytorch, which includes - `MirroredStrategy`, `TPUStrategy`, `MultiWorkerMirroredStrategy`, `CentralStorageStrategy`, `ParameterServerStrategy`. I have worked with [Mirrored](https://www.tensorflow.org/guide/distributed_training#mirroredstrategy), [MultiWorkerMirrored](https://www.tensorflow.org/guide/distributed_training#multiworkermirroredstrategy) and [ParameterServer](https://www.tensorflow.org/guide/distributed_training#parameterserverstrategy), each of them using custom configuration of how a data/model should be trained in sync/async manner. and with pytorch contributing with [Distributed Data Parallel (DDP), Fully Shared Data Parallel (FSDP) and RPC Distributed Learning](https://pytorch.org/tutorials/distributed/home.html).
+
+![tensorflow parameter server](/tensorflow_data_parallelsim.webp)
+[image source](https://henning.kropponline.de/2017/03/19/distributing-tensorflow/)
+
+by far, the training from parameter server strategy is more efficient and a considerable approach of training data/model parallely on a distributed network using large-scale data. this strategy is designed to manage the complexities of synchronizing model parameters across multiple worker nodes, and it's especially useful for scenarios where the model and/or the dataset is too large to fit into the memory of a single machine.
+
+the two main components of this - parameter server and worker nodes. parameter server are responsible for storing and managing the model parameters. they receive updates from worker nodes and apply these updates to the model parameters. there can be even be one or multiple parameter servers depending on the scale of the problem. whereas, worker nodes perform the actual computation, i.e., the forward and backward propagation of the neural network.
+
+you can check out this [tutorial on PSS](https://www.tensorflow.org/tutorials/distribute/parameter_server_training) for onboarding distributed computing. and, a work-on implementation of parameter server strategy using greenfield data architecture for managing bigdata - [github repo](https://github.com/0xRobinR/sfai-gf-trainer)
+
 ## why?
 
 it'll be fun experimenting two technologies of the decade, utilizing each other potential!
