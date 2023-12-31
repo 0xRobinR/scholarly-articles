@@ -1,10 +1,23 @@
 {
   "articles": [
     {
-      "file": "ai-in-the-blockchain.md",
-      "title": "the ai in the blockchAIn",
+      "file": "a-decentralized-community.md",
+      "title": "a decentralized community",
       "author": "robin",
-      "date": "2023-10-03T00:00:00.000Z",
+      "date": "2023-12-31T00:00:00.000Z",
+      "tags": "research,decentralized,community",
+      "index": 8,
+      "label": "what?",
+      "image": "a_decentralized_community.webp",
+      "description": "a powerful, distributed and most followed community. adopting something at a very high rate than anything",
+      "oneLiner": "the power of decentralization",
+      "buttonLabel": "what?"
+    },
+    {
+      "file": "ai-in-the-blockchain.md",
+      "title": "the AI in the blockchAIn",
+      "author": "robin",
+      "date": "2023-10-11T00:00:00.000Z",
       "tags": "research",
       "index": 6,
       "label": "see the future",
@@ -79,5 +92,5 @@
       "buttonLabel": "how?"
     }
   ],
-  "lastUpdated": "2023-10-09T16:44:37.511Z"
+  "lastUpdated": "2023-12-31T17:51:29.085Z"
 }

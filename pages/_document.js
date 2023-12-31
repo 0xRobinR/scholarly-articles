@@ -3,7 +3,7 @@ const Document = () => {
   return (
     <Html lang="zxx" dir="ltr">
       <Head>
-        <meta name="description" content="Robin Rajput - Coding The Endgame" />
+        <meta name="description" content="robin rajput - coding the endgame" />
         <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />

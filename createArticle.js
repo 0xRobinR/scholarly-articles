@@ -2,8 +2,7 @@ const fs = require('fs')
 const args = require('minimist')(process.argv.slice(2));
 const moment = require('moment');
 
-const genArticle = ({ topic, author, date, keywords, idx, label, image }) => `
----
+const genArticle = ({ topic, author, date, keywords, idx, label, image }) => `---
 title: ${topic}
 author: ${author}
 date: ${date}
