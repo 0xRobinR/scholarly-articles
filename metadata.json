@@ -1,6 +1,19 @@
 {
   "articles": [
     {
+      "file": "the-math-behind-sha256.md",
+      "title": "the math behind - sha256",
+      "author": "robin",
+      "date": "2023-09-11T00:00:00.000Z",
+      "tags": "research,math,hash,sha256",
+      "index": 9,
+      "label": "hash it",
+      "image": "sha_256.png",
+      "description": "a new series called "the math behind - x", starting with - SHA256, a cryptographic hash function",
+      "oneLiner": "math, math and math!!!",
+      "buttonLabel": "hash it"
+    },
+    {
       "file": "a-decentralized-community.md",
       "title": "a decentralized community",
       "author": "robin",
@@ -92,5 +105,5 @@
       "buttonLabel": "how?"
     }
   ],
-  "lastUpdated": "2023-12-31T17:51:29.085Z"
+  "lastUpdated": "2023-09-11T20:50:29.085Z"
 }
