@@ -38,7 +38,7 @@ sha-256 employs six logical functions that operate on 32-bit words:
 5. **σ0(x) = rotr^7(x) ⊕ rotr^18(x) ⊕ shr^3(x)**
 6. **σ1(x) = rotr^17(x) ⊕ rotr^19(x) ⊕ shr^10(x)**
 
-where rotr^n(x) is the circular right shift operation by n bits, and shr^n(x) is the right shift operation by n bits[1].
+where rotr^n(x) is the circular right shift operation by n bits, and shr^n(x) is the right shift operation by n bits.
 
 ### message schedule
 
@@ -67,7 +67,7 @@ the compression function is the heart of sha-256. it processes the expanded mess
    - a = t1 + t2
 3. update the hash values: h += a, h[1] += b, ..., h[7] += h
 
-where k[i] are the round constants, derived from the first 32 bits of the fractional parts of the cube roots of the first 64 prime numbers[4].
+where k[i] are the round constants, derived from the first 32 bits of the fractional parts of the cube roots of the first 64 prime numbers.
 
 ## security properties
 
@@ -77,13 +77,13 @@ the mathematical design of sha-256 contributes to several important security pro
 
 2. **second preimage resistance**: given an input m1, it's computationally infeasible to find a different input m2 such that hash(m1) = hash(m2). this is ensured by the complexity of the message schedule and compression function.
 
-3. **collision resistance**: it's computationally infeasible to find two different messages m1 and m2 such that hash(m1) = hash(m2). the best-known attacks on sha-256 still require approximately 2^128 operations, far beyond current computational capabilities[4].
+3. **collision resistance**: it's computationally infeasible to find two different messages m1 and m2 such that hash(m1) = hash(m2). the best-known attacks on sha-256 still require approximately 2^128 operations, far beyond current computational capabilities.
 
 4. **avalanche effect**: a small change in the input results in a significantly different hash output. this is achieved through the complex interplay of bitwise operations and the message schedule.
 
 ## enhancements and variations
 
-researchers continue to explore ways to improve upon the sha-256 algorithm. for instance, the esha-256 (enhanced secure hash algorithm) proposes modifications to the compression function and reduces the number of rounds from 64 to 32, aiming to decrease computation time while maintaining security[8].
+researchers continue to explore ways to improve upon the sha-256 algorithm. for instance, the esha-256 (enhanced secure hash algorithm) proposes modifications to the compression function and reduces the number of rounds from 64 to 32, aiming to decrease computation time while maintaining security.
 
 understanding the mathematical intricacies of sha-256 is crucial for cryptographers and security experts. it allows them to analyze potential vulnerabilities, propose improvements, and develop more robust cryptographic systems for the ever-evolving landscape of information security.
 
