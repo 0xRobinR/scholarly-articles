@@ -2,10 +2,10 @@ import styles from "../styles/modules/Skills.module.scss";
 const Skills = () => {
   // skills information
   const skills = [
-    { percent: "22%", name: "dapp browser" },
-    { percent: "9%", name: "blockchain" },
-    { percent: "2%", name: "Code Lang." },
-    { percent: "0.1%", name: "artificial blockchain" },
+    { percent: "100%", name: "dapp browser" },
+    { percent: "45%", name: "blockchain" },
+    { percent: "23%", name: "Code Lang." },
+    { percent: "1.1%", name: "artificial blockchain" },
   ];
 
   return (
