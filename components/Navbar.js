@@ -36,18 +36,19 @@ const Navbar = () => {
       {/* map all links */}
       {navLinks.map((navLink) => (
         <div className={styles.link} key={navLink.href}>
-          <Link href={navLink.href}>
-            <a
-              className={
-                styles.icon +
-                " " +
-                ((router.asPath === navLink.href || ( navLink.other && router.asPath.includes(navLink.other) )) ? styles.active : "") // change active class when route change (route = href > add active class)
-              }
-              onClick={() => navbar.current.classList.remove(styles.visible)} // in (large , medium, small) screens  when click on navbar link navbar close
-              // used in arrow function to fix (ref undefined)
-            >
-              {navLink.icon}
-            </a>
+          <Link
+            href={navLink.href}
+            className={
+              styles.icon +
+              " " +
+              ((router.asPath === navLink.href || ( navLink.other && router.asPath.includes(navLink.other) )) ? styles.active : "") // change active class when route change (route = href > add active class)
+            }
+            // in (large , medium, small) screens  when click on navbar link navbar close
+            // used in arrow function to fix (ref undefined)
+            onClick={() => navbar.current.classList.remove(styles.visible)}>
+
+            {navLink.icon}
+
           </Link>
           <div className={styles.title}>
             <h6 className="mb-0">{navLink.title}</h6>

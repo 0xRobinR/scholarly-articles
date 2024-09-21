@@ -1,11 +1,24 @@
 {
   "articles": [
     {
+      "file": "the-math-behind-elliptic-curve.md",
+      "title": "the math behind - elliptic curve",
+      "author": "robin",
+      "date": "2024-09-21T17:18:09.000Z",
+      "tags": "math,cryptography,ecc",
+      "index": 10,
+      "label": "find the point!",
+      "image": "ecc.png",
+      "description": "ecc is a public key cryptography method based on algebraic structure of elliptic curves",
+      "oneLiner": null,
+      "buttonLabel": "find the point!"
+    },
+    {
       "file": "the-math-behind-sha256.md",
       "title": "the math behind - sha256",
       "author": "robin",
-      "date": "2023-09-11T00:00:00.000Z",
-      "tags": "research,math,hash,sha256",
+      "date": "2024-09-11T00:00:00.000Z",
+      "tags": "research",
       "index": 9,
       "label": "hash it",
       "image": "sha_256.png",
@@ -105,5 +118,5 @@
       "buttonLabel": "how?"
     }
   ],
-  "lastUpdated": "2023-12-31T17:51:29.085Z"
+  "lastUpdated": "2024-09-21T12:05:25.545Z"
 }
