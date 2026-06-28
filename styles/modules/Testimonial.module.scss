@@ -2,17 +2,17 @@
 .testimonial {
   margin-top: 3rem;
   padding-top: 3rem;
-  background-color: var(--background-alt);
+  background-color: var(--bg-alt);
   .box {
     @include flex;
     margin: 0 0.5rem 3rem 0.5rem;
     padding: 0 1rem 1rem 1rem;
-    background-color: var(--background);
-    border-radius: 1rem;
+    background-color: var(--bg);
+    border-radius: var(--border-radius);
     position: relative;
     z-index: 1;
     .imageContainer {
-      @include circle(100px, 100px, var(--background-alt));
+      @include circle(100px, 100px, var(--bg-alt));
       padding: 10px;
       margin-top: -5px;
       img {
@@ -22,7 +22,7 @@
     .quoteRight,
     .quoteLeft {
       @include position(absolute, $bottom: 0, $right: 1rem);
-      color: var(--main);
+      color: var(--accent);
       font-size: 72px;
       z-index: -1;
       opacity: 0.1;
@@ -42,13 +42,13 @@
         margin: 0 auto 3rem auto;
         button {
           font-size: 0;
-          @include circle(18px, 18px, var(--background));
+          @include circle(18px, 18px, var(--bg));
           margin: 0 0.5rem;
           transition: background-color 250ms ease-in-out;
         }
       }
       :global(li.slick-active) button {
-        background-color: var(--main);
+        background-color: var(--accent);
       }
     }
   }

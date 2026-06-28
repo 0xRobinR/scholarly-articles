@@ -1,30 +1,32 @@
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: var(--font-inter), "Poppins", sans-serif;
   h1 {
     font-weight: 800;
     font-size: 72px;
-    text-transform: capitalize;
+    font-family: var(--font-mono), monospace;
+    text-transform: lowercase;
     word-wrap: break-word;
   }
   h2,
   h3 {
     font-weight: 700;
-    text-transform: capitalize;
+    font-family: var(--font-mono), monospace;
+    text-transform: lowercase;
     word-wrap: break-word;
   }
   h4,
   h5,
   h6 {
     font-weight: 500;
-    text-transform: capitalize;
+    text-transform: lowercase;
     word-wrap: break-word;
   }
   p {
     color: var(--hint);
     font-weight: 400;
     word-wrap: break-word;
-    &::first-letter {
-      text-transform: uppercase;
-    }
+  }
+  code, pre {
+    font-family: var(--font-mono), monospace;
   }
 }

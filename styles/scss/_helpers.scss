@@ -1,7 +1,7 @@
 @use "./mixins" as *;
 .section-title {
   font-size: 2rem;
-  text-transform: uppercase;
+  text-transform: lowercase;
   position: relative;
   &::before {
     content: "";
@@ -9,7 +9,7 @@
     transform: translateX(-50%);
     width: 30px;
     height: 70px;
-    border: 5px solid var(--main);
+    border: 5px solid var(--accent);
     border-top-color: transparent;
     border-bottom-color: transparent;
   }
@@ -17,32 +17,32 @@
 
 .main-button {
   @include flex(inline-flex, $dir: row);
-  background-color: var(--main);
+  background-color: var(--accent);
   padding: 0.5rem;
-  border-radius: 0.5rem;
+  border-radius: var(--border-radius);
   transition: background-color 250ms ease-in-out;
   &:hover {
     background-color: transparent;
     .main-button-icon {
-      background-color: var(--main);
-      color: var(--fixed);
+      background-color: var(--accent);
+      color: var(--bg);
     }
     .main-button-title {
-      color: var(--main);
+      color: var(--accent);
     }
   }
   .main-button-icon {
-    background-color: var(--fixed);
-    color: var(--main);
+    background-color: var(--bg);
+    color: var(--accent);
     width: 32px;
     height: 32px;
     font-size: 16px;
-    border-radius: 0.5rem;
+    border-radius: var(--border-radius);
     @include flex;
     transition: all 250ms ease-in-out;
   }
   .main-button-title {
-    color: var(--fixed);
+    color: var(--bg);
     margin-left: 0.5rem;
     margin-bottom: 0;
     transition: color 250ms ease-in-out;

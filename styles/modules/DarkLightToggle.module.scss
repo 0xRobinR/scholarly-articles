@@ -1,0 +1,153 @@
+.toggle {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.25rem;
+  z-index: 101;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--bg-alt);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+  &:hover:not(:disabled) {
+    border-color: var(--accent);
+  }
+  &:disabled {
+    cursor: default;
+  }
+}
+
+.bulb {
+  font-size: 16px;
+  transition: transform 0.2s, color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  &.lit {
+    color: #fbbf24;
+    filter: drop-shadow(0 0 6px #fbbf24);
+    animation: glow 0.5s ease-in-out infinite alternate;
+  }
+  &.dead {
+    color: #ff4444;
+    animation: shake 0.3s ease;
+  }
+}
+
+@keyframes glow {
+  from { transform: scale(1); }
+  to { transform: scale(1.15); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-3px); }
+  50% { transform: translateX(3px); }
+  75% { transform: translateX(-2px); }
+}
+
+.hammer {
+  position: fixed;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 28px;
+  color: #ff4444;
+  z-index: 102;
+  animation: smash 0.5s ease-in forwards;
+  transform-origin: bottom right;
+  pointer-events: none;
+  filter: drop-shadow(0 0 4px rgba(255, 68, 68, 0.5));
+}
+
+@keyframes smash {
+  0% {
+    transform: rotate(-60deg) translate(-20px, -30px);
+    opacity: 1;
+  }
+  60% {
+    transform: rotate(15deg) translate(0, 0);
+    opacity: 1;
+  }
+  80% {
+    transform: rotate(5deg) translate(0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(0deg) translate(0, 0);
+    opacity: 0;
+  }
+}
+
+.sparks {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  z-index: 103;
+}
+
+.spark {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background-color: var(--accent);
+  border-radius: 50%;
+  animation: sparkFly 0.8s ease-out forwards;
+  box-shadow: 0 0 4px var(--accent);
+
+  @for $i from 0 through 5 {
+    &:nth-child(#{$i + 1}) {
+      animation-delay: #{$i * 0.05}s;
+      --angle: #{$i * 60}deg;
+    }
+  }
+}
+
+@keyframes sparkFly {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(
+      calc(cos(var(--angle)) * 40px),
+      calc(sin(var(--angle)) * 40px)
+    ) scale(0);
+    opacity: 0;
+  }
+}
+
+.message {
+  position: fixed;
+  top: 3.5rem;
+  right: 0.75rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.65rem;
+  color: var(--accent);
+  opacity: 0;
+  animation: fadeMsg 1.2s ease forwards;
+  pointer-events: none;
+  z-index: 102;
+  white-space: nowrap;
+}
+
+@keyframes fadeMsg {
+  0% { opacity: 0; transform: translateY(-5px); }
+  20% { opacity: 1; transform: translateY(0); }
+  80% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(5px); }
+}
