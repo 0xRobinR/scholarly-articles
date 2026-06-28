@@ -58,37 +58,184 @@
   75% { transform: translateX(-2px); }
 }
 
-.hammer {
+// ---- METHOD 1: BOW & ARROW ----
+
+.scene {
   position: fixed;
-  top: 0.5rem;
-  right: 1rem;
-  font-size: 28px;
-  color: #ff4444;
-  z-index: 102;
-  animation: smash 0.5s ease-in forwards;
-  transform-origin: bottom right;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 56px;
   pointer-events: none;
-  filter: drop-shadow(0 0 4px rgba(255, 68, 68, 0.5));
+  z-index: 102;
+  display: flex;
+  align-items: center;
 }
 
-@keyframes smash {
-  0% {
-    transform: rotate(-60deg) translate(-20px, -30px);
-    opacity: 1;
-  }
-  60% {
-    transform: rotate(15deg) translate(0, 0);
-    opacity: 1;
-  }
-  80% {
-    transform: rotate(5deg) translate(0, 0);
-    opacity: 1;
-  }
-  100% {
-    transform: rotate(0deg) translate(0, 0);
-    opacity: 0;
+.bowSvg {
+  position: absolute;
+  left: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 54px;
+  color: var(--accent);
+  animation: drawBow 0.8s ease-out forwards;
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.15));
+  &.released {
+    animation: releaseBow 0.4s ease-out forwards;
   }
 }
+
+@keyframes drawBow {
+  0% { opacity: 0; transform: translateY(-50%) translateX(-20px) scale(0.7); }
+  50% { opacity: 1; transform: translateY(-50%) translateX(0) scale(1); }
+  100% { opacity: 1; transform: translateY(-50%) translateX(0) scale(1); }
+}
+
+@keyframes releaseBow {
+  0% { opacity: 1; transform: translateY(-50%) scale(1); }
+  30% { opacity: 1; transform: translateY(-50%) scale(0.92); }
+  100% { opacity: 0; transform: translateY(-50%) scale(0.85); }
+}
+
+.arrowSvg {
+  position: absolute;
+  left: 3.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 12px;
+  color: #ff4444;
+  opacity: 1;
+  filter: drop-shadow(0 0 3px rgba(255, 68, 68, 0.5));
+  &.fly {
+    animation: flyArrow 0.7s cubic-bezier(0.1, 0, 0.2, 1) forwards;
+  }
+}
+
+@keyframes flyArrow {
+  0% { left: 3.5rem; opacity: 1; transform: translateY(-50%) scaleX(1); }
+  30% { transform: translateY(-50%) scaleX(1.4); opacity: 1; }
+  90% { opacity: 1; transform: translateY(-50%) scaleX(1.1); }
+  100% { left: calc(100vw - 3rem); opacity: 0; transform: translateY(-50%) scaleX(1); }
+}
+
+// ---- METHOD 2: HAMMER ----
+
+.hammer {
+  position: fixed;
+  top: -1rem;
+  right: 1rem;
+  font-size: 30px;
+  color: var(--accent);
+  z-index: 102;
+  pointer-events: none;
+  animation: hammerRaise 0.5s ease-out forwards;
+  transform-origin: bottom right;
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.2));
+  &.hammerHit {
+    animation: hammerSmash 0.4s ease-in forwards;
+  }
+}
+
+@keyframes hammerRaise {
+  0% { transform: rotate(0deg) translateY(-20px); opacity: 0; }
+  100% { transform: rotate(-45deg) translateY(0); opacity: 1; }
+}
+
+@keyframes hammerSmash {
+  0% { transform: rotate(-45deg); opacity: 1; }
+  50% { transform: rotate(20deg) translateY(10px); opacity: 1; }
+  70% { transform: rotate(10deg) translateY(12px); opacity: 1; }
+  100% { transform: rotate(0deg) translateY(15px); opacity: 0; }
+}
+
+// ---- METHOD 3: LIGHTNING ----
+
+.lightning {
+  position: fixed;
+  top: -60px;
+  right: 0.8rem;
+  width: 40px;
+  height: 120px;
+  color: #fbbf24;
+  z-index: 102;
+  pointer-events: none;
+  opacity: 0;
+  filter: drop-shadow(0 0 6px #fbbf24);
+  animation: chargeUp 0.8s ease-out forwards;
+  &.strike {
+    animation: boltStrike 0.35s ease-in forwards;
+  }
+}
+
+@keyframes chargeUp {
+  0% { opacity: 0; transform: translateY(-30px); }
+  40% { opacity: 0.3; transform: translateY(-10px); }
+  70% { opacity: 0.5; transform: translateY(-5px); }
+  100% { opacity: 0.6; transform: translateY(0); }
+}
+
+@keyframes boltStrike {
+  0% { opacity: 0.6; transform: translateY(0) scaleY(1); }
+  30% { opacity: 1; transform: translateY(15px) scaleY(1.1); filter: drop-shadow(0 0 12px #fbbf24); }
+  60% { opacity: 1; transform: translateY(20px) scaleY(1); filter: drop-shadow(0 0 20px #fff); }
+  100% { opacity: 0; transform: translateY(25px) scaleY(0.9); }
+}
+
+// ---- METHOD 4: SNIPER ----
+
+.crosshair {
+  position: fixed;
+  top: 1.25rem;
+  left: 2rem;
+  font-size: 24px;
+  color: #ff4444;
+  z-index: 102;
+  pointer-events: none;
+  opacity: 0;
+  filter: drop-shadow(0 0 2px rgba(255, 68, 68, 0.4));
+  animation: sniperAim 1s ease-out forwards;
+  &.locked {
+    animation: sniperLock 0.15s ease-in forwards;
+  }
+}
+
+@keyframes sniperAim {
+  0% { opacity: 0; left: 2rem; transform: scale(2); }
+  30% { opacity: 0.6; left: 30vw; transform: scale(1.5); }
+  60% { opacity: 0.8; left: 60vw; transform: scale(1.2); }
+  80% { opacity: 0.9; left: calc(100vw - 5rem); transform: scale(1.1); }
+  100% { opacity: 1; left: calc(100vw - 2.7rem); transform: scale(1); }
+}
+
+@keyframes sniperLock {
+  0% { opacity: 1; transform: scale(1); }
+  50% { opacity: 1; transform: scale(0.8); }
+  100% { opacity: 0; transform: scale(0.5); }
+}
+
+.muzzleFlash {
+  position: fixed;
+  top: 1rem;
+  right: 0.9rem;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(255, 200, 50, 0.5) 40%, transparent 70%);
+  z-index: 103;
+  pointer-events: none;
+  animation: flash 0.2s ease-out forwards;
+}
+
+@keyframes flash {
+  0% { opacity: 1; transform: scale(0.5); }
+  50% { opacity: 1; transform: scale(1.5); }
+  100% { opacity: 0; transform: scale(2); }
+}
+
+// ---- SHARED: SPARKS & MESSAGE ----
 
 .sparks {
   position: fixed;
@@ -118,10 +265,7 @@
 }
 
 @keyframes sparkFly {
-  0% {
-    transform: translate(0, 0) scale(1);
-    opacity: 1;
-  }
+  0% { transform: translate(0, 0) scale(1); opacity: 1; }
   100% {
     transform: translate(
       calc(cos(var(--angle)) * 40px),
@@ -139,7 +283,7 @@
   font-size: 0.65rem;
   color: var(--accent);
   opacity: 0;
-  animation: fadeMsg 1.2s ease forwards;
+  animation: fadeMsg 1.5s ease forwards;
   pointer-events: none;
   z-index: 102;
   white-space: nowrap;
