@@ -2,32 +2,25 @@
   outline: 0 !important;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   overflow-x: hidden !important;
   background-color: var(--bg);
   color: var(--text);
-  transition: background-color 0.3s, color 0.3s;
-  input,
-  textarea,
-  button {
-    border: 0;
-    background-color: transparent;
-  }
+  margin: 0;
   a {
     text-decoration: none !important;
-    color: inherit;
+    color: var(--accent);
     &:hover {
-      text-decoration: none !important;
-      color: inherit;
+      text-decoration: underline !important;
     }
   }
   img {
     display: block;
     max-width: 100%;
     height: auto;
-  }
-  section {
-    min-height: 100vh;
-    padding-top: 3rem;
   }
 }

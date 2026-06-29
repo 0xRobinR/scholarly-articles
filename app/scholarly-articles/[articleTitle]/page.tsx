@@ -1,8 +1,12 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { remark } from "remark";
-import html from "remark-html";
+import { unified } from "unified";
+import remarkParse from "remark-parse";
+import remarkMath from "remark-math";
+import remarkRehype from "remark-rehype";
+import rehypeKatex from "rehype-katex";
+import rehypeStringify from "rehype-stringify";
 import type { Metadata } from "next";
 import { baseUrl } from "../../../config";
 import ArticleView from "./ArticleView";
@@ -18,10 +22,17 @@ async function getArticle(articleTitle: string): Promise<ArticleData> {
   const filePath = path.join(articlesDirectory, `${articleTitle}.md`);
   const fileContent = fs.readFileSync(filePath, "utf8");
   const { content, data } = matter(fileContent);
-  const processedContent = await remark().use(html).process(content);
+
+  const result = await unified()
+    .use(remarkParse)
+    .use(remarkMath)
+    .use(remarkRehype)
+    .use(rehypeKatex)
+    .use(rehypeStringify)
+    .process(content);
 
   return {
-    content: processedContent.toString(),
+    content: result.toString(),
     metadata: {
       ...data,
       date: data.date.toISOString(),
@@ -45,15 +56,16 @@ export async function generateMetadata({
   const { metadata } = await getArticle(articleTitle);
 
   return {
-    title: `${metadata.title} - ${metadata.oneLiner}`,
+    title: `${metadata.title}${metadata.oneLiner ? ` — ${metadata.oneLiner}` : ""}`,
+    description: metadata.description as string,
     openGraph: {
-      title: `${metadata.title} - ${metadata.oneLiner}`,
+      title: `${metadata.title}`,
       description: metadata.description as string,
       images: [`${baseUrl}/${metadata.image}`],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${metadata.title} - ${metadata.oneLiner}`,
+      title: `${metadata.title}`,
       description: metadata.description as string,
       images: [`${baseUrl}/${metadata.image}`],
     },
